@@ -1,0 +1,77 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Liste de vos commandes'" [icon]="'fa-table'"></app-page-header>
+    <div class="jumbotron">
+      <form role="form">
+        <div class="card mb-3">
+          <div class="card-header" style="font-weight:bold">
+            <i class="fa fa-list" style="font-size:17px"></i> Liste de vos commandes   
+          </div>
+          <br/>
+          <div class="row"> 
+            <label style="margin-left: 35%;font-size: 110%;font-weight: bold">Trier par :</label>
+            <select  class="form-control" style="width: 17%;margin-left: 3%" (change)="trier($event.target.value)" >
+              <option value="1">ID commande </option>
+              <option value="2">Date de la livraison</option>
+              <option value="3">Date de la commande</option>
+              <option value="4">Etat de la livraison</option>
+            </select>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table">
+              <thead>
+                <tr style="text-align: center">
+                  <th>ID commande</th>
+                  <th>Date de commande</th>
+                  <th>Date de livraison</th>
+                  <th>Prix total (en DT)</th>
+                  <th>A été livrée</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="text-align: center" *ngFor="let commande of commandes">
+                  <th>{{commande.id}}</th>
+                  <td>{{commande.dateCommande}}</td>
+                  <td>{{commande.dateLivraison}}</td>
+                  <td>{{commande.quantite}}</td>
+                  <td style="font-weight: bold">{{commande.livraison}}</td>
+                  <td>
+                    <button type="button" (click)="onSelect(commande)" class="btn btn-success"><i class="fa fa-file-text-o" aria-hidden="true" style="margin-right: 4%"></i>Voir détails</button>
+                    <button type="button" (click)="confimerLaLivraison(commande,contents,contentss)" class="btn btn-success"  style="margin-left: 2%;"><i class="fa fa-check-square-o" aria-hidden="true" style="margin-right: 2%"></i>Confirmer livraison</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ng-template #contents let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="margin-left: 2%"><i class="fa fa-check" aria-hidden="true" style="color: green"></i>Succés</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Votre livraison a été confirmé avec succés</p>
+                </div>  
+                <div class="modal-footer" style="margin-right: 30%">
+                    <button type="button" class="btn btn-success" (click)="c('Close click')" style="width: 40%">ok !</button>
+                </div>
+            </ng-template>
+            <ng-template #contentss let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="margin-left: 2%"><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: red"></i>Information</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Votre livraison est déja confirmée</p>
+                </div>  
+                <div class="modal-footer" style="margin-right: 30%">
+                    <button type="button" class="btn btn-danger" (click)="c('Close click')" style="width: 40%">ok !</button>
+                </div>
+            </ng-template>
+          </div>
+        </div>
+      </form>
+    </div>
+</div> 

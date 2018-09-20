@@ -1,0 +1,22 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo6.jpg" width="350px" class="user-avatar" />
+            <h1 style="font-weight: bold;color: LimeGreen">Medica-IT Dashboard</h1>
+            <form role="form" #f="ngForm" (ngSubmit)="onLogin(f.value)">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" ngModel="" class="form-control input-underline input-lg" id="" placeholder="Username" required name="username"/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" ngModel="" class="form-control input-underline input-lg" id="" placeholder="Password" required  name="password"/>
+                    </div>
+                </div>
+                <button  type="submit" class="btn rounded-btn"> Log in </button>
+                &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Réserver produits'" [icon]="'fa-edit'"></app-page-header>
+    <div class="jumbotron">
+        <form role="form">
+            <div class="card mb-3">
+                <div class="card-header" style="font-weight:bold">
+                    <i class="fa fa-list" style="font-size:17px"></i> Réserver des produits d'une pharmacie sur la région de <label style="font-weight: bold;font-size: 25px" >{{userss.pharmacie.region.nom}}</label>
+                </div>
+                <br/>
+                <div class="form-group input-group" style="width: 40%; margin-left:30%">
+                    <input type="text" class="form-control" [(ngModel)]="recherche" placeholder="Rechercher un produit" name="recherche"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" (click)="onSelect2()"  type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr style="text-align: center">
+                                <th>Nom pharmacie</th>
+                                <th>Adresse</th>
+                                <th>Téléphone</th>
+                                <th>Email</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="text-align: center" *ngFor="let pharmacie of pharmacies"> 
+                                <td>{{pharmacie.nom}}</td>
+                                <td>{{pharmacie.adresse}}</td>
+                                <td>{{pharmacie.tel}}</td>
+                                <td>{{pharmacie.mail}}</td>
+                                <td><button type="button" (click)="onSelect(pharmacie.id)" routerLink="/prods-pharmacie"   class="btn btn-success"><i class="fa fa-eye" aria-hidden="true" style="margin-right: 3%"></i>Consulter produits</button></td>       
+                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </form>     
+    </div>
+</div>

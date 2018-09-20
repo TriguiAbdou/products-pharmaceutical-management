@@ -1,0 +1,57 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Détails commande'" [icon]="'fa-table'"></app-page-header>
+    <form role="form">
+        <div class="card mb-3">
+            <div class="card-header" style="font-weight:bold">
+                <i class="fa fa-file-text-o" style="font-size:17px"></i> Détails sur la commande <label style="font-weight: bold;font-size: 20px" >ID commande: {{commandes.id}}</label>
+            </div>
+            <div>
+                <br/>
+                <div >
+                    <div style=" border-style:solid ; height:160px;  border-color:green ;border-width: 1px ; width: 44% ;margin-left: 1%;" >
+                        <div style="margin-left: 4%">
+                            <br/>
+                            <label style="font-weight: bold;font-size: 20px">Date de la commande :</label><label style="margin-left: 1%;font-weight: bold;font-size: 20px">{{commandes.dateCommande}}</label><br/>
+                            <label style="font-weight: bold;font-size: 20px">Date de la livraison :</label><label style="margin-left: 1%;font-weight: bold;font-size: 20px">{{commandes.dateLivraison}}</label><br/>
+                            <label style="font-weight: bold;font-size: 20px">A été livrée :</label><label style="margin-left: 1%;font-weight: bold;font-size: 20px">{{commandes.livraison}}</label><br/>
+                            <br/>
+                        </div>    
+                    </div>
+                    <div style=" border-style:solid ;margin-top: -12% ;float:right; height:160px;   border-color:green ;border-width: 1px ; width: 50% ; margin-right: 2%" >
+                        <div style="display: inline-block">
+                            <button type="submit" value="" class="btn btn-success btn-lg" style="margin-top: 5%;margin-left: 38% ;width: 60%" (click)="confimerLaLivraison(commandes)"><i class="fa fa-check-square-o" aria-hidden="true" style="margin-right: 2%"></i>Confirmer la livraison</button>
+                            <button type="button" value="" class="btn btn-danger btn-lg" style="margin-top: 2%;margin-left: 38% ;width: 60%" (click)="AnnulerCommande()"><i class="fa fa-times" aria-hidden="true" style="margin-right: 2%" ></i>Annuler la commande</button>
+                        </div>
+                    </div>
+                </div>    
+                <div style="margin-left: 1%;width: 97%;margin-top: 2%;border-style:solid ;  border-color:green ;border-width: 1px ;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Code produit</th>
+                                <th>Nom produit</th>
+                                <th>Générique</th>
+                                <th>Quantité</th>
+                                <th style="width: 15%">Prix total (DT)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let commandeProduits of commandeProduit">
+                                <th scope="row">{{commandeProduits.produit.code}}</th>
+                                <td>{{commandeProduits.produit.nom}}</td>
+                                <td>{{commandeProduits.produit.generique}}</td>
+                                <td>{{commandeProduits.quantiteCom}}</td>
+                                <td>{{commandeProduits.prix}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="font-weight: bold;font-size: 110%;text-align: center">Le prix total de la commande est (en DT) :</td>
+                                <td  style="font-weight: bold;font-size: 110%">{{commandes.quantite}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     
+                </div>
+            </div> 
+        </div>
+    </form>           
+</div>

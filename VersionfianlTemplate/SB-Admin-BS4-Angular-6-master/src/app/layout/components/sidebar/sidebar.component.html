@@ -1,0 +1,74 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <div class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-home" style="font-size:19px"></i>&nbsp;Accueil
+        </a>
+        <a [routerLink]="['/info-pharmacie']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-hospital-o" style="font-size:18px"></i>&nbsp;Votre pharmacie
+        </a>
+        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-medkit" style="font-size:18px"></i>&nbsp;Vos Produits
+        </a>
+        <a [routerLink]="['/commander-produits']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-shopping-cart" style="font-size:18px"></i>&nbsp;Commander Produits
+        </a>
+        <a [routerLink]="['/reserver-produits']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-edit" style="font-size:18px"></i>&nbsp;Réserver produits
+        </a>
+        <a [routerLink]="['/list-commandes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-list" style="font-size:18px"></i>&nbsp;Liste des commandes
+        </a>
+        <a [routerLink]="['/list-reservations']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-shopping-basket" style="font-size:18px"></i>&nbsp;Les réservations
+        </a>
+        
+      <br/>
+        <!-- <br/>
+        <br/>
+        <br/>
+        <br/>
+        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;Charts
+        </a>
+        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;Tables
+        </a>
+        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;Forms
+        </a>
+        <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-desktop"></i>&nbsp;Bootstrap Element
+        </a>
+        <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-wrench"></i>&nbsp;Bootstrap Grid
+        </a>
+        <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;Component
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <span><i class="fa fa-plus"></i>&nbsp; Menu </span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <li>
+                        <a href="javascript:void(0)"><span>Submenu</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span>Submenu</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span>Submenu</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file-o"></i>&nbsp;Blank Page
+        </a>
+        <a class="list-group-item more-themes" href="http://www.strapui.com/" >
+           More Theme
+        </a> -->
+
+    </div>
+</nav>

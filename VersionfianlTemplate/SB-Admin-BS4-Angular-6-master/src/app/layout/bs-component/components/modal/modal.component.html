@@ -1,0 +1,17 @@
+
+                <button class="btn btn-success" (click)="open(content)"><i class="fa fa-shopping-cart" aria-hidden="true" style="margin-right: 4%"></i>Commender</button>
+                <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal title</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>rrrrrrrrrrrr</p>
+                    </div>
+                    <div class="modal-footer" style="margin-right: 25%">
+                        <button type="button" class="btn btn-success" (click)="c('Close click')"><i class="fa fa-shopping-cart" aria-hidden="true" style="margin-right: 4%"></i> Ajouter au panier</button>
+                    </div>
+                </ng-template>
+      

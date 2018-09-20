@@ -1,0 +1,51 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Réserver produits'" [icon]="'fa-edit'"></app-page-header>
+    <div class="jumbotron">
+        <form role="form">
+            <div class="card mb-3">
+                <div class="card-header" style="font-weight: bold">
+                      <i class="fa fa-edit" style="font-size:17px"></i> Consulter les produits de la pharmacie <label style="font-weight: bold;font-size: 25px" >{{pharmacie.nom}}</label>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr style="text-align: center">
+                                <th>Code</th>
+                                <th>Nom </th>
+                                <th>Generique</th>
+                                <th>Prix (DT)</th>
+                                <th>Date fin de consommation</th>
+                                <th style="width: 20%"></th>
+
+                             </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="text-align: center" *ngFor="let produitPharmacie of produitsPharmacie">
+                                <th>{{produitPharmacie.produit.code}}</th>
+                                <td>{{produitPharmacie.produit.nom}}</td>
+                                <td>{{produitPharmacie.produit.generique}}</td>
+                                <td>{{produitPharmacie.prixVente}}</td>
+                                <td>{{produitPharmacie.dfc}}</td>
+                                <td><button type="button" (click)="reserverProduit(produitPharmacie.produit.code,produitPharmacie,contents)" class="btn btn-success" style="width: 60%"><i class="fa fa-shopping-basket" style="font-size:15px;margin-right: 4%"></i>Réserver !</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ng-template #contents let-c="close" let-d="dismiss">
+                        <div class="modal-header">
+                            <h4 class="modal-title" style="margin-left: 2%"><i class="fa fa-check" aria-hidden="true" style="color: green"></i>Succés</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Produit réservé avec succés!</p>
+                        </div>  
+                        <div class="modal-footer" style="margin-right: 30%">
+                            <button type="button" class="btn btn-success" (click)="c('Close click')" style="width: 40%">ok !</button>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>          
+        </form>
+    </div>
+</div>

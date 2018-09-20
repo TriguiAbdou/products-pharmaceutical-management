@@ -1,0 +1,43 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Votre pharmacie'" [icon]="'fa-desktop'"></app-page-header>
+  <div class="jumbotron">
+      <form role="form">
+          <div class="card mb-3">
+              <div class="card-header" style="font-weight: bold">
+                  <i class="fa fa-fw fa-edit"></i> Informations sur votre pharmacie 
+              </div>
+              <div class="card-body table-responsive">
+                  <div style="text-align: center">
+                      <div>
+                            <img src="../../../assets/images/signe.jpg" title="pharmacie"/>
+                            <img src="../../../assets/images/pharmacie.jpg" title="pharmacie"/>
+                            <img src="../../../assets/images/signe.jpg" title="pharmacie"/>
+                      </div>
+                      <br/>
+                      <div style="text-align: center;border-style:solid ;border-color:green;display:inline-block;width: 35% ;background-color :LightCyan" >
+                          <br/>
+                          <label style="font-weight: bold;font-size: 17px" >Nom pharmacie :</label>
+                          <label style="font-size: 20px;font-weight: bold;color: green;margin-left:2%" >{{pharmacie.nom}}</label><br/>
+                          <label style="font-weight: bold;font-size: 17px">Adresse :</label>
+                          <label style="font-size: 17px;margin-left:2%">{{pharmacie.adresse}}</label><br/>
+                          <label style="font-weight: bold;font-size: 17px">Région :</label>
+                          <label style="font-size: 17px;margin-left:2%">{{pharmacie.region.nom}}</label><br/>
+                          <label style="font-weight: bold;font-size: 17px">Téléphone :</label>
+                          <label style="font-size: 17px;margin-left:2%">{{pharmacie.tel}}</label><br/>
+                          <label style="font-weight: bold;font-size: 17px">Email :</label>
+                          <label style="font-size: 17px;margin-left:2%">{{pharmacie.mail}}</label><br/>
+        
+                          <br/>                        
+                      </div>
+                  </div>
+              </div>
+              <div style="text-align: center">
+                  <button type="button" (click)="onSelect()" class="btn btn-lg btn-success" ><i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-right: 2%"></i>Modifier pharmacie</button>
+              </div>
+              <br/>
+          </div>
+          
+      </form>
+  </div>
+</div> 
+

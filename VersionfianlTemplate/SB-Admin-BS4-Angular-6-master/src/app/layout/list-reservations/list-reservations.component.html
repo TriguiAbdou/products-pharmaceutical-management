@@ -1,0 +1,40 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Les réservations'" [icon]="'fa-table'"></app-page-header>
+  <div class="jumbotron">
+    <form role="form">
+      <div class="card mb-3">
+        <div class="card-header" style="font-weight:bold">
+          <i class="fa fa-list" style="font-size:17px"></i> Les réservations
+        </div>
+        <div class="card-body table-responsive">
+          <div style="text-align: center;display:inline-block;width: 40% ;background-color :rgb(232, 247, 244);margin-top: 3%;margin-left: 28%;" >
+            <label style="font-weight: bold;font-size: 180%;color: rgb(4, 129, 4)">Les Produits réservés</label>
+          </div>
+          <table class="table">
+            <thead>
+              <tr style="text-align: center" *ngFor="let produitpha of ProduitPharmacie">
+                <div style="text-align: center;border-style:solid ;border-color:green;display:inline-block;width: 90% ;background-color :LightCyan;margin-top: 3%" >
+                  <br/>
+                  <div class="row">
+                    <label style="font-weight: bold;font-size: 17px;margin-left: 12%" >Nom Produit :</label>
+                    <label style="font-size: 17px;font-weight: bold;color: green;margin-left:2%" >{{produitpha.produit.nom}}</label><br/>
+                    <label style="font-weight: bold;font-size: 17px;margin-left: 8%">Quantité dans le stock :</label>
+                    <label style="font-size: 17px;margin-left:2%">{{produitpha.quantite}}</label> <br/>
+                    <label style="font-weight: bold;font-size: 17px;margin-left: 8%;color: firebrick">Quantité réservée :</label>
+                    <label style="font-weight: bold;font-size: 17px;margin-left:2%;color: firebrick">{{produitpha.npr}}</label><br/>
+                    <br/>
+                  </div>
+                <div>
+                  <button type="button" class="btn btn-info" style="width: 29%;font-weight: bold" (click)="diminuernbProduit(produitpha.produit.code,produitpha)">Décrémenter la quantité réservée</button>
+                </div>
+                <br/>                        
+                </div>
+                <br/>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> 

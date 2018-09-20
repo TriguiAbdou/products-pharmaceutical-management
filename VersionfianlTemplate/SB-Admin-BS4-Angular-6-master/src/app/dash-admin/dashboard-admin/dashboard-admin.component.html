@@ -1,0 +1,41 @@
+<div [@routerTransition]>
+    <h2 class="text-muted" style="text-align: center"> <label style="font-weight: bold">'Medica-IT'</label> Dashboard administrateur </h2>
+    <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3" style="width: 100%">
+                <div class="card-header">
+                    Doughnut Chart
+                </div>
+                <div class="card-body">
+                    <canvas baseChart height="150px" [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Pie Chart
+                </div>
+                <div class="card-body">
+                    <canvas baseChart height="150px" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+   </div>
+   <hr >
+  
+    <div class="row" >
+      <div class="col-xl-3 col-lg-6" style="margin-left: 25%" >
+        <app-stat [bgClass]="'primary'" [icon]="'fa-user'" [label]="'Gérer utilisateurs'" routerLink="/users"></app-stat>
+      </div> 
+                                  
+      <div class="col-xl-3 col-lg-6">
+        <app-stat [bgClass]="'success'" [icon]="'fa-ambulance'" [label]="'Gérer pharmacies'" ></app-stat>
+      </div>
+  </div>
+
+    <hr />
+    <hr />
+</div>

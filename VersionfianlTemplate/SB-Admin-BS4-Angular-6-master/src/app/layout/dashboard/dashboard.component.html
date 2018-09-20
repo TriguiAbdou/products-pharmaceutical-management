@@ -1,0 +1,79 @@
+<div [@routerTransition]>
+    <h2 class="text-muted" style="text-align: center"> <label style="font-weight: bold">'Medica-IT'</label> Dashboard Pharmacie</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let slider of sliders">
+                    <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Random first slide" width="100%" >
+                    <div class="carousel-caption">
+                        <h3>{{slider.label}}</h3>
+                        <p>{{slider.text}}</p>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'primary'" routerLink="/info-pharmacie" [icon]="'fa-ambulance'"  [label]="'Votre pharmacie '"  ></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'warning'" routerLink="/charts" [icon]="'fa-medkit'" [label]="'Vos produits '" ></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'success'" routerLink="/commander-produits" [icon]="'fa-shopping-cart'"  [label]="'Commander produits '" ></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'danger'" routerLink="/reserver-produits" [icon]="'fa-credit-card-alt'"  [label]="'Réserver produits '"></app-stat>
+        </div>
+    </div>
+    <hr />
+    <hr />
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card card-default">
+                <div class="card-header">
+                    <i class="fa fa-clock-o fa-fw"></i> <label style="font-weight: bold">Description</label>
+                </div>
+                <p style="margin-left: 2%;margin-top: 2%">'Medica-IT' Dashboard a pour objectif de concevoir et mettre en œuvre une application web interactive, fiable, conviviale et facile à intégrer dans l'environnement de
+                travail des pharmacies assurant la gestion de ces dernières, suivre l'état de stock des médicaments, en essayant de trouver les solutions aux problèmes rencontrés lors de
+                l'exécution. Cette application vise essentiellement à diminuer la complexité des traitements ainsi que le temps perdu lors de la gestion de stock, en particulier.</p>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+                <div class="card card-default mb-3">
+                <div class="card-header">
+                        <i class="fa fa-bell fa-fw"></i> <label style="font-weight: bold"> gestionnaires de votre pharmacie</label>
+                </div>
+                <div class="list-group">
+                        <a href="#" class="list-group-item clearfix d-block">
+                            <i class="fa fa-user"></i> Ameni hellali
+                        </a>
+                        <a href="#" class="list-group-item clearfix d-block">
+                            <i class="fa fa-user"></i> maher 
+                        </a>
+                        <a href="#" class="list-group-item clearfix d-block">
+                            <i class="fa fa-user"></i> ali ben ali
+                        </a>
+                </div>
+           
+           
+           
+                <!-- <div class="card-header">
+                    <i class="fa fa-bell fa-fw"></i> Notifications card
+                </div>
+                /.card-header -->
+                <!-- <app-notification></app-notification> --> 
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <!-- <app-chat></app-chat> -->
+            <!-- /.card .chat-card -->
+            
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+</div>
